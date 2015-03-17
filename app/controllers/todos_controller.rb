@@ -1,4 +1,7 @@
 class TodosController < ApplicationController
+  
+  before_filter :authenticate
+
   def index
     @todos = Todo.all
   end
@@ -9,7 +12,6 @@ class TodosController < ApplicationController
   
   def create
     Todo.create(todo_params)
-
     redirect_to todos_path
   end
   

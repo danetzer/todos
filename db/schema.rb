@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316174644) do
+ActiveRecord::Schema.define(version: 20150317193239) do
 
   create_table "todos", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
+
+  add_index "todos", ["email"], name: "index_todos_on_email"
 
 end
